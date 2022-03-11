@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goods/static/css/main.358fd9af.css",
-    "main.js": "/goods/static/js/main.45d2090b.js",
+    "main.js": "/goods/static/js/main.f8ffe4b2.js",
     "static/js/787.3467d23c.chunk.js": "/goods/static/js/787.3467d23c.chunk.js",
     "static/media/collar_hero_3840.png": "/goods/static/media/collar_hero_3840.b29d59758984a63b8a28.png",
     "static/media/candy_hero_3840.png": "/goods/static/media/candy_hero_3840.28c8bb8608d637eeb859.png",
@@ -50,11 +50,11 @@
     "static/media/collar_1.jpg": "/goods/static/media/collar_1.724425167d988342ce71.jpg",
     "index.html": "/goods/index.html",
     "main.358fd9af.css.map": "/goods/static/css/main.358fd9af.css.map",
-    "main.45d2090b.js.map": "/goods/static/js/main.45d2090b.js.map",
+    "main.f8ffe4b2.js.map": "/goods/static/js/main.f8ffe4b2.js.map",
     "787.3467d23c.chunk.js.map": "/goods/static/js/787.3467d23c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.358fd9af.css",
-    "static/js/main.45d2090b.js"
+    "static/js/main.f8ffe4b2.js"
   ]
 }
