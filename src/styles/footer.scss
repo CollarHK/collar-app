@@ -1,0 +1,32 @@
+.footer{
+  background-color: #404040;
+  color : #ffffff;
+  text-align : center;
+  a{
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .message{
+    background-color : #ffffff;
+    color: #000000;
+    margin : 2rem;
+    padding : 2rem;
+    box-shadow : rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    h3 {
+      margin : 0rem;
+    }
+  }
+  .warn{
+    color : #ff0000;
+    size : 3rem;
+  }
+  .icon{
+    display : inline-block;
+    height : 2rem;
+    width : 2rem;
+    background-repeat : no-repeat;
+    background-position : center;
+    background-size : contain;
+    margin : 0.5rem;
+  }
+}

@@ -1,0 +1,38 @@
+.goods{
+  .status{
+    right: 0;
+    position: absolute;
+    padding: 0.5rem;
+    color: white;
+    font-weight : 500;
+    opacity : 0.9;
+    &.started{
+      background-color: #265c00;
+    }
+    &.pending{
+      background-color: #001d87;
+    }
+  }
+
+  .splide__slide__container:hover{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .splide__arrow--prev{
+    left : 0rem;
+  }
+  .splide__arrow--next{
+    right : 0rem;
+  }
+  .splide__arrow svg{
+    fill : #ffffff
+  }
+  .splide__arrow:hover svg{
+    fill : #6a6b6c
+  }
+  .splide__pagination__page.is-active{
+    background-color : #626262
+  }
+  .splide__pagination__page:hover {
+    background-color: #ffffff;
+  }
+}

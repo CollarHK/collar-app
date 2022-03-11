@@ -1,0 +1,10 @@
+.notification {
+  position: -webkit-sticky;
+  position: sticky;
+  top : 0;
+  padding : 0.5rem;
+  text-align : center;
+  background-color : #6c6c6c;
+  color: white;
+  z-index : 9999;
+}

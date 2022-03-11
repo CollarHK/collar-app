@@ -1,0 +1,19 @@
+.grid {
+  background-color: black;
+  padding: 2rem;
+  @media screen and (max-width: 768px){
+    padding : 1rem;
+  }
+}
+.box {
+  padding-top: 100%;
+  background-image: var(--my-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease-in-out 0.1s;
+
+  &:hover {
+    background-image: var(--hover-image);
+  }
+}

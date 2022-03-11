@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Notification from './component/Notification.js';
+import Home from './page/Home.js';
+import Member from './page/Member.js';
+import Footer from './component/Footer.js';
+import { HashRouter,Routes,Route } from "react-router-dom";
 
 function App() {
+  const message = ""
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {message && <Notification text={message}></Notification> }
+      <HashRouter basename="/">
+        <Routes>
+          <Route path="/:member" element={<Member />} />
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </HashRouter>
+      <Footer />
     </div>
   );
 }
