@@ -1,9 +1,17 @@
 {
   "files": {
-    "main.css": "/goods/static/css/main.98bccc9f.css",
-    "main.js": "/goods/static/js/main.9cce8d16.js",
+    "main.css": "/goods/static/css/main.39c7c263.css",
+    "main.js": "/goods/static/js/main.82d5d437.js",
     "static/js/787.3467d23c.chunk.js": "/goods/static/js/787.3467d23c.chunk.js",
     "static/media/collar_hero.png": "/goods/static/media/collar_hero.b29d59758984a63b8a28.png",
+    "static/media/candy_hero.png": "/goods/static/media/candy_hero.28c8bb8608d637eeb859.png",
+    "static/media/gao_hero.png": "/goods/static/media/gao_hero.2f0e2b3dc58b791b863d.png",
+    "static/media/soching_hero.png": "/goods/static/media/soching_hero.661a4b57bb18e0ac112b.png",
+    "static/media/sumling_hero.png": "/goods/static/media/sumling_hero.3214e340534bae9dfd4e.png",
+    "static/media/marf_hero.png": "/goods/static/media/marf_hero.74db594e63935bf5e8da.png",
+    "static/media/day_hero.png": "/goods/static/media/day_hero.ce0815436932b179a943.png",
+    "static/media/winka_hero.png": "/goods/static/media/winka_hero.bdb2526f04298f0be8e9.png",
+    "static/media/ivy_hero.png": "/goods/static/media/ivy_hero.555648433042c5124359.png",
     "static/media/collar_2.jpg": "/goods/static/media/collar_2.172d91c3c838a451d79f.jpg",
     "static/media/sumling_1.jpg": "/goods/static/media/sumling_1.77b1f30a48ff90a15acb.jpg",
     "static/media/soching_1.jpg": "/goods/static/media/soching_1.7d409a1700fbd06f9cc9.jpg",
@@ -23,12 +31,12 @@
     "static/media/ivy_2.jpg": "/goods/static/media/ivy_2.9d58dfc79c672ed8df75.jpg",
     "static/media/collar_1.jpg": "/goods/static/media/collar_1.724425167d988342ce71.jpg",
     "index.html": "/goods/index.html",
-    "main.98bccc9f.css.map": "/goods/static/css/main.98bccc9f.css.map",
-    "main.9cce8d16.js.map": "/goods/static/js/main.9cce8d16.js.map",
+    "main.39c7c263.css.map": "/goods/static/css/main.39c7c263.css.map",
+    "main.82d5d437.js.map": "/goods/static/js/main.82d5d437.js.map",
     "787.3467d23c.chunk.js.map": "/goods/static/js/787.3467d23c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98bccc9f.css",
-    "static/js/main.9cce8d16.js"
+    "static/css/main.39c7c263.css",
+    "static/js/main.82d5d437.js"
   ]
 }
