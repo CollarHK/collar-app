@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
@@ -15,7 +15,7 @@ const Slider = (props) => {
   function renderSlide(data){
     var tag = "未定";
     var status = "pending";
-    if(data[2] != ''){
+    if(data[2] !== ''){
       var startDate = moment(data[2]+'+08:00', "DD/MM/YYYY HH:mmZ");
       var currentDate = moment();
       if(currentDate > startDate){
@@ -34,10 +34,23 @@ const Slider = (props) => {
 
   return (
     <Splide options = {{
-        type : 'loop',
+        rewind : true,
         focus : 'center',
-        autoWidth : true,
-        gap : '1rem'
+        gap : '1rem',
+        perPage : 3,
+        breakpoints: {
+          375 : {
+            gap : '0rem',
+          },
+      		768 : {
+      			pagination: false,
+            gap : '1rem',
+            perPage : 1,
+      		},
+          1440 : {
+            perPage : 2,
+          }
+        }
     }}>
         {
           data.map(a => renderSlide(a))

@@ -3,18 +3,19 @@ import Slider from './Slider.js';
 import '../styles/goods.scss';
 
 const Goods = (props) => {
-  const { payment,loading,list } = props;
+  const { type,loading,list } = props;
 
   function renderLoading(){
     return (<div class="lds-ring"><div></div><div></div><div></div><div></div></div>);
   }
 
   return (
-    <section className={payment}>
+    <section className={type}>
      <div className="container goods">
-       { payment == "free" && <h2>免費應援</h2> }
-       { payment == "paid" && <h2>收費應援</h2> }
-       <div className="list row">
+       { type == "today" && <h2>今日應援</h2> }
+       { type == "free" && <h2>免費應援</h2> }
+       { type == "paid" && <h2>收費應援</h2> }
+       <div className="list row g-0  g-lg-1 ">
          { loading && renderLoading()}
          { !loading &&
            <>

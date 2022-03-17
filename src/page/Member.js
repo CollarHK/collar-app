@@ -23,7 +23,7 @@ function Member() {
       }
     const banner = require('../image/hero/' + member + '_hero_'+size+'.png');
     setLoading(true);
-    fetch('https://script.google.com/macros/s/AKfycbyvmsYx23-0TWLvEx57k0UcAgPfpinelt0Jqj_VtVMSRObEN6xwwcSDwwWrmMMgKHcZ/exec?member='+member)
+    fetch('https://script.google.com/macros/s/AKfycbwMlm-hPhI3qh6F21qjMv9XLLb5qIRtrTcV2Zm_wNzShymfbAvvH1yWknOfywxaDY8ycw/exec?member='+member)
     .then(function (response) {
       return response.text();
     }).then(function (html) {
@@ -38,21 +38,21 @@ function Member() {
   }, [member]);
 
   const compareDate = (a,b) => {
-    if(a[2] == ''){
+    if(a[2] === ''){
       return 1;
-    }else if(b[2] == ''){
+    }else if(b[2] === ''){
       return -1;
     }
     return moment(a[2],"DD/MM/YYYY HH:mm").toDate() < moment(b[2],"DD/MM/YYYY HH:mm").toDate() ? -1 : 1;
   };
 
   function initFreeList(list) {
-    var free = list.filter(l => l[1] == "free").sort(compareDate);
+    var free = list.filter(l => l[1] === "free").sort(compareDate);
     setFreeGoods(free);
   }
 
   function initPaidList(list) {
-    var paid = list.filter(l => l[1] == "paid").sort(compareDate);
+    var paid = list.filter(l => l[1] === "paid").sort(compareDate);
     setPaidGoods(paid);
   }
 
@@ -60,8 +60,8 @@ function Member() {
     <>
       <NavBar />
       <HeroImage image={banner}></HeroImage>
-      <Goods payment="free" loading={loading} list={freeGoods} />
-      <Goods payment="paid" loading={loading} list={paidGoods} />
+      <Goods type="free" loading={loading} list={freeGoods} />
+      <Goods type="paid" loading={loading} list={paidGoods} />
     </>
   );
 }
