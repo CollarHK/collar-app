@@ -36,7 +36,7 @@ const Footer = (props) => {
             </a>
           </div>
           <div className="col-sm">
-            <span>嗚謝：@芝心糖醋蝦</span>
+            <span>嗚謝：@芝心糖醋蝦, @nafla</span>
           </div>
         </div>
       </div>

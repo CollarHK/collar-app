@@ -42,9 +42,14 @@
   background-color: #000000;
 }
 
-.paid {
+.paid,.today {
   color: #000000;
   background-color: #c85337;
+}
+
+.today {
+  color : #fff8dc;
+  background-color: rgb(150, 195, 170);
 }
 
 .goods{

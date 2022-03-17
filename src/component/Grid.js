@@ -2,11 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import '../styles/grid.scss';
 
-const members = ['Marf','Gao','Day','Soching','Collar','Candy','Winka','Ivy','Sumling'];
+const members = ['Soching','Candy','Marf','Gao','Collar','Sumling','Winka','Ivy','Day'];
 
 const Grid = (props) => {
-
-  const { text } = props;
 
   return (
     <div className="container">
@@ -23,7 +21,12 @@ const Grid = (props) => {
 
 function renderMemberBlock(member){
   const image = require('../image/profile/' + member + '_1.jpg');
-  const hoverImage = require('../image/profile/' + member + '_2.jpg');
+  var hoverImage;
+  if(member == "collar"){
+    hoverImage = require('../image/profile/collar_1.jpg');
+  } else {
+    hoverImage = require('../image/profile/' + member + '.gif');
+  }
   return (
     <div className="col-4">
       <Link to={member}>
