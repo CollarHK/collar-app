@@ -1,7 +1,29 @@
+#home {
+  .hero-image {
+    width: 200%;
+    background-repeat: repeat-x;
+    animation: slide 25s linear infinite;
+  }
+}
+
+#members{
+  .hero-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 .hero-image {
-  width: 100%;
   padding-top: 40%;
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
 }

@@ -49,7 +49,7 @@ function Home() {
 
 
   return (
-    <>
+    <section id="home">
       <section className="hero">
         { banner && <HeroImage image={banner}></HeroImage> }
       </section>
@@ -57,7 +57,7 @@ function Home() {
         <Grid />
       </section>
       <Goods type="today" loading={loading} list={goods} />
-    </>
+    </section>
   );
 }
 

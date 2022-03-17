@@ -57,12 +57,12 @@ function Member() {
   }
 
   return (
-    <>
+    <section id="members">
       <NavBar />
       <HeroImage image={banner}></HeroImage>
       <Goods type="free" loading={loading} list={freeGoods} />
       <Goods type="paid" loading={loading} list={paidGoods} />
-    </>
+    </section>
   );
 }
 
