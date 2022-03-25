@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
 import '../styles/slider.scss';
@@ -15,20 +15,26 @@ const Slider = (props) => {
   function renderSlide(data){
     var tag = "未定";
     var status = "pending";
-    if(data[2] !== ''){
-      var startDate = moment(data[2]+'+08:00', "DD/MM/YYYY HH:mmZ");
-      var currentDate = moment();
-      if(currentDate > startDate){
+    var currentDate = new moment(new Date()).tz('Asia/Hong_Kong');
+    if(data[6] !== ''){
+      var startDate = moment(data[6]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
+      if(currentDate.isAfter(startDate)){
         tag = "派發中";
         status = "started";
       }else {
-        tag = startDate.format("D/M") + '開始';
+        tag = startDate.format("D/M") + '派發';
+        if(data[4] !== ''){
+          var reserveDate = moment(data[4]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
+          if(reserveDate.isBefore(currentDate)){
+            tag = "預留中";
+          }
+        }
       }
     }
     return (
       <SplideSlide>
         <div className={`status ${status}`}>{tag}</div>
-        <div dangerouslySetInnerHTML={{__html: data[5]}} />
+        <div dangerouslySetInnerHTML={{__html: data[3]}} />
       </SplideSlide>)
   }
 

@@ -2,26 +2,46 @@ import React, { useState,useEffect } from 'react';
 import HeroImage from '../component/HeroImage.js';
 import Goods from '../component/Goods.js';
 import Grid from '../component/Grid.js';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 function Home() {
   const { innerWidth: width } = window;
   const [ banner , setBanner ] = useState(null);
   const [ loading , setLoading ] = useState(null);
-  const [ goods, setGoods ] = useState([]);
+  const [ reserve, setReserve ] = useState([]);
+  const [ distribute, setDistribute ] = useState([]);
 
   const compareDate = (a,b) => {
-    if(a[2] === ''){
+    if(a[6] === ''){
       return 1;
-    }else if(b[2] === ''){
+    }else if(b[6] === ''){
       return -1;
     }
-    return moment(a[2],"DD/MM/YYYY HH:mm").toDate() < moment(b[2],"DD/MM/YYYY HH:mm").toDate() ? -1 : 1;
+    return moment(a[6],"DD/MM/YYYY HH:mm").toDate() < moment(b[6],"DD/MM/YYYY HH:mm").toDate() ? -1 : 1;
   };
 
-  function initList(list) {
-    var list = list.sort(compareDate);
-    setGoods(list);
+  function initReservse(list) {
+    var now = new moment(new Date()).tz('Asia/Hong_Kong');
+    var reserve = list.filter((i) => {
+      if(i[4] != ''){
+        var startDate = moment(i[6]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
+        if(now.isBefore(startDate) || i[6] === '')
+          return i;
+      }
+    }).sort(compareDate);
+    setReserve(reserve);
+  }
+
+  function initDistribute(list){
+    var now = new moment(new Date()).tz('Asia/Hong_Kong');
+    var distribute = list.filter((i) => {
+      if(i[6] != ''){
+        var startDate = moment(i[6]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
+        if(now.isAfter(startDate))
+          return i;
+      }
+    }).sort(compareDate);
+    setDistribute(distribute);
   }
 
   useEffect(() => {
@@ -34,12 +54,13 @@ function Home() {
       }
     var hero = require('../image/hero/collar_hero_never_'+size+'.png');
     setLoading(true);
-    fetch('https://script.google.com/macros/s/AKfycbwMlm-hPhI3qh6F21qjMv9XLLb5qIRtrTcV2Zm_wNzShymfbAvvH1yWknOfywxaDY8ycw/exec?today=true')
+    fetch('https://script.google.com/macros/s/AKfycbz8YRYV1x4DEpFQd1-dxMN4XEBLc-ecU0yNkNLkaNAumph63wJZieDj38yY-fpPDxe58A/exec?today=true')
     .then(function (response) {
       return response.text();
     }).then(function (html) {
       var goods = JSON.parse(html);
-      initList(goods);
+      initReservse(goods);
+      initDistribute(goods);
       setLoading(false);
     }).catch(function (err) {
       console.warn('Something went wrong.', err);
@@ -56,7 +77,8 @@ function Home() {
       <section className="grid">
         <Grid />
       </section>
-      <Goods type="today" loading={loading} list={goods} />
+      <Goods type="today-reserve" loading={loading} title={"今日預留"} list={reserve} />
+      <Goods type="today-distribute" loading={loading} title={"今日派發"} list={distribute} />
     </section>
   );
 }

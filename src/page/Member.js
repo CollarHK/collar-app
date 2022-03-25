@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import NavBar from '../component/NavBar.js';
 import HeroImage from '../component/HeroImage.js';
 import Goods from '../component/Goods.js';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { useParams } from "react-router-dom";
 
 function Member() {
@@ -21,9 +21,9 @@ function Member() {
       }else{
         size = 1920;
       }
-    const banner = require('../image/hero/' + member + '_hero_'+size+'.png');
+    const banner = require('../image/hero/' + member + '_hero_nnl_'+size+'.png');
     setLoading(true);
-    fetch('https://script.google.com/macros/s/AKfycbwMlm-hPhI3qh6F21qjMv9XLLb5qIRtrTcV2Zm_wNzShymfbAvvH1yWknOfywxaDY8ycw/exec?member='+member)
+    fetch('https://script.google.com/macros/s/AKfycbz8YRYV1x4DEpFQd1-dxMN4XEBLc-ecU0yNkNLkaNAumph63wJZieDj38yY-fpPDxe58A/exec?member='+member)
     .then(function (response) {
       return response.text();
     }).then(function (html) {
@@ -38,12 +38,12 @@ function Member() {
   }, [member]);
 
   const compareDate = (a,b) => {
-    if(a[2] === ''){
+    if(a[6] === ''){
       return 1;
-    }else if(b[2] === ''){
+    }else if(b[6] === ''){
       return -1;
     }
-    return moment(a[2],"DD/MM/YYYY HH:mm").toDate() < moment(b[2],"DD/MM/YYYY HH:mm").toDate() ? -1 : 1;
+    return moment(a[6],"DD/MM/YYYY HH:mm").toDate() < moment(b[6],"DD/MM/YYYY HH:mm").toDate() ? -1 : 1;
   };
 
   function initFreeList(list) {
@@ -60,8 +60,8 @@ function Member() {
     <section id="members">
       <NavBar />
       <HeroImage image={banner}></HeroImage>
-      <Goods type="free" loading={loading} list={freeGoods} />
-      <Goods type="paid" loading={loading} list={paidGoods} />
+      <Goods type="free" loading={loading} title={"免費應援"} list={freeGoods} />
+      <Goods type="paid" loading={loading} title={"收費應援"} list={paidGoods} />
     </section>
   );
 }
