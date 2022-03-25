@@ -1,22 +1,25 @@
 #home {
+  .hero {
+    overflow: hidden;
+  }
   .hero-image {
     width: 200%;
+    padding-top: 33.3333%;
+    background-position: left;
     background-repeat: repeat-x;
     animation: slide 25s linear infinite;
+    background-size: contain;
   }
 }
 
 #members{
   .hero-image {
     width: 100%;
+    padding-top: 40%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
-}
-
-.hero-image {
-  padding-top: 40%;
-  background-position: center;
 }
 
 @keyframes slide {
