@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/footer.scss';
 import iconForm from '../image/icon/icon-form.png';
+import iconYoutube from '../image/icon/icon-youtube.png';
 import iconIG from '../image/icon/icon-ig.png';
 import iconTG from '../image/icon/icon-tg.png';
 import iconGit from '../image/icon/icon-github.png';
@@ -25,6 +26,9 @@ const Footer = (props) => {
             </a>
           </div>
           <div className="col-sm">
+            <a href="https://www.youtube.com/channel/UCEFAQ624u6lYlKbALYhnxsQ/featured" target="_blank">
+              <div className="icon" style={{ backgroundImage : 'url('+ iconYoutube +')' }}></div>
+            </a>
             <a href="https://instagram.com/dwarf67.hk" target="_blank">
               <div className="icon" style={{ backgroundImage : 'url('+ iconIG +')' }}></div>
             </a>
