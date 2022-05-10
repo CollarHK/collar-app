@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goods/static/css/main.06ab4a7c.css",
-    "main.js": "/goods/static/js/main.1d434da5.js",
+    "main.js": "/goods/static/js/main.9376b853.js",
     "static/js/787.3467d23c.chunk.js": "/goods/static/js/787.3467d23c.chunk.js",
     "static/media/teaser.gif": "/goods/static/media/teaser.1893f40a08d5d909f690.gif",
     "static/media/collar_hero_3840.png": "/goods/static/media/collar_hero_3840.d15550932ae502b8181f.png",
@@ -42,11 +42,11 @@
     "static/media/gao.jpg": "/goods/static/media/gao.983634e83890c4af29d9.jpg",
     "index.html": "/goods/index.html",
     "main.06ab4a7c.css.map": "/goods/static/css/main.06ab4a7c.css.map",
-    "main.1d434da5.js.map": "/goods/static/js/main.1d434da5.js.map",
+    "main.9376b853.js.map": "/goods/static/js/main.9376b853.js.map",
     "787.3467d23c.chunk.js.map": "/goods/static/js/787.3467d23c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06ab4a7c.css",
-    "static/js/main.1d434da5.js"
+    "static/js/main.9376b853.js"
   ]
 }
