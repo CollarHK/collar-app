@@ -1,21 +1,28 @@
 #home {
-  .hero {
-    overflow: hidden;
-  }
+  // .hero {
+  //   overflow: hidden;
+  // }
+  // .hero-image {
+  //   width: 200%;
+  //   padding-top: 33.3333%;
+  //   background-position: left;
+  //   background-repeat: repeat-x;
+  //   animation: slide 25s linear infinite;
+  //   background-size: contain;
+  // }
   .hero-image {
-    width: 200%;
-    padding-top: 33.3333%;
-    background-position: left;
-    background-repeat: repeat-x;
-    animation: slide 25s linear infinite;
-    background-size: contain;
+      width: 100%;
+      padding-top: 33.3333%;
+      background-position: left;
+      background-repeat: repeat-x;
+      background-size: contain;
   }
 }
 
 #members{
   .hero-image {
     width: 100%;
-    padding-top: 40%;
+    padding-top: 10%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

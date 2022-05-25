@@ -1,5 +1,6 @@
 .navBar{
-  background-color : #000000;
+  background-color: rgb(25, 200, 235);
+  //background-color : #000000;
   position: -webkit-sticky;
   position: sticky;
   top : 0;
@@ -13,17 +14,20 @@
     background-repeat : no-repeat;
     background-position : center;
     background-size : contain;
-    filter : invert(39%) sepia(15%) saturate(3784%) hue-rotate(332deg) brightness(95%) contrast(86%);
+    filter : invert(99%) sepia(86%) saturate(567%) hue-rotate(307deg) brightness(105%) contrast(102%);
     &:hover{
       filter: invert(95%) sepia(100%) saturate(21%) hue-rotate(250deg) brightness(103%) contrast(100%);
     }
   }
   a{
-    color: #c85337;
+    //color: #c85337;
+    color : #fff8dc;
     text-decoration: none;
     font-family: 'Permanent Marker', cursive;
+    transition : text-shadow 0.5s;
     &:hover{
       color : #ffffff;
+      text-shadow: 2px 2px #6c5724;
     }
   }
 }

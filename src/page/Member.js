@@ -10,6 +10,7 @@ function Member() {
   const [ loading , setLoading ] = useState(null);
   const [ freeGoods, setFreeGoods ] = useState([]);
   const [ paidGoods, setPaidGoods ] = useState([]);
+  const [ teaserGoods, setTeaserGoods ] = useState([]);
   const [ banner, setBanner] = useState(null);
   const { innerWidth: width } = window;
 
@@ -21,13 +22,14 @@ function Member() {
       }else{
         size = 1920;
       }
-    const banner = require('../image/hero/' + member + '_hero_nnl_'+size+'.png');
+    const banner = require('../image/hero/' + member + '_hero_'+size+'.png');
     setLoading(true);
-    fetch('https://script.google.com/macros/s/AKfycbz8YRYV1x4DEpFQd1-dxMN4XEBLc-ecU0yNkNLkaNAumph63wJZieDj38yY-fpPDxe58A/exec?member='+member)
+    fetch('https://script.google.com/macros/s/AKfycbzw2cQ6ytBBEINQNdKmM89xaKw5Wm-rxBZz7W-tq78i2NHA-KC8sqA64D5pUzsaUOnh/exec?member='+member)
     .then(function (response) {
       return response.text();
     }).then(function (html) {
       var goods = JSON.parse(html);
+      initTeaserList(goods);
       initFreeList(goods);
       initPaidList(goods);
       setLoading(false);
@@ -47,13 +49,18 @@ function Member() {
   };
 
   function initFreeList(list) {
-    var free = list.filter(l => l[1] === "free").sort(compareDate);
+    var free = list.filter(l => l[1] === "free" && (l[6] != '' || l[4] != '')).sort(compareDate);
     setFreeGoods(free);
   }
 
   function initPaidList(list) {
-    var paid = list.filter(l => l[1] === "paid").sort(compareDate);
+    var paid = list.filter(l => l[1] === "paid" && (l[6] != '' || l[4] != '')).sort(compareDate);
     setPaidGoods(paid);
+  }
+
+  function initTeaserList(list){
+    var teaser = list.filter(l => l[6] == '' && l[4] == '');
+    setTeaserGoods(teaser);
   }
 
   return (
@@ -62,6 +69,7 @@ function Member() {
       <HeroImage image={banner}></HeroImage>
       <Goods type="free" loading={loading} title={"免費應援"} list={freeGoods} />
       <Goods type="paid" loading={loading} title={"收費應援"} list={paidGoods} />
+      <Goods type="teaser" loading={loading} title={"應援預告"} list={teaserGoods} />
     </section>
   );
 }

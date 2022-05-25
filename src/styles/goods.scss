@@ -38,23 +38,32 @@
 
 
 .free {
-  color: #c85337;
-  background-color: #000000;
+  //color: #c85337;
+  //background-color: #000000;
+  color : #fff8dc;
+  background-color: rgb(25, 200, 235);
 }
 
 .paid {
-  color: #000000;
-  background-color: #c85337;
+  //color: #000000;
+  //background-color: #c85337;
+  color : #fff8dc;
+  background-color: rgb(5,60,155);
+}
+
+.teaser{
+  color : #fff8dc;
+  background-color: rgb(25, 200, 235);
 }
 
 .today-reserve {
   color : #fff8dc;
-  background-color: rgb(150, 195, 170);
+  background-color: rgb(25, 200, 235);
 }
 
 .today-distribute{
   color: #fff8dc;
-  background-color: rgb(50,80,80);
+  background-color: rgb(5,60,155);
 }
 
 .goods{

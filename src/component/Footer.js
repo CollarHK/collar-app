@@ -32,9 +32,6 @@ const Footer = (props) => {
             <a href="https://instagram.com/dwarf67.hk" target="_blank">
               <div className="icon" style={{ backgroundImage : 'url('+ iconIG +')' }}></div>
             </a>
-            <a href="https://telegram.me/callmekolo" target="_blank">
-              <div className="icon" style={{ backgroundImage : 'url('+ iconTG +')' }}></div>
-            </a>
             <a href="https://github.com/collar-hk/goods" target="_blank">
               <div className="icon" style={{ backgroundImage : 'url('+ iconGit +')' }}></div>
             </a>

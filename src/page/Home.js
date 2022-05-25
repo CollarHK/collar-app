@@ -52,9 +52,10 @@ function Home() {
       }else{
         size = 1920;
       }
-    var hero = require('../image/hero/collar_hero_never_'+size+'.png');
+    var hero = require('../image/teaser.gif');
+
     setLoading(true);
-    fetch('https://script.google.com/macros/s/AKfycbz8YRYV1x4DEpFQd1-dxMN4XEBLc-ecU0yNkNLkaNAumph63wJZieDj38yY-fpPDxe58A/exec?today=true')
+    fetch('https://script.google.com/macros/s/AKfycbzw2cQ6ytBBEINQNdKmM89xaKw5Wm-rxBZz7W-tq78i2NHA-KC8sqA64D5pUzsaUOnh/exec?today=true')
     .then(function (response) {
       return response.text();
     }).then(function (html) {

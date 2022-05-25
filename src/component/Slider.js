@@ -13,24 +13,30 @@ const Slider = (props) => {
   });
 
   function renderSlide(data){
-    var tag = "未定";
-    var status = "pending";
+    var tag;
+    var status = "unknown";
     var currentDate = new moment(new Date()).tz('Asia/Hong_Kong');
+    if(data[4] !== ''){
+      var reserveDate = moment(data[4]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
+      if(reserveDate.isBefore(currentDate)){
+        tag = "預留中";
+        status = "started";
+      }else{
+        tag = reserveDate.format("D/M") + '預留';
+        status = "pending";
+      }
+    }
     if(data[6] !== ''){
       var startDate = moment(data[6]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
       if(currentDate.isAfter(startDate)){
         tag = "派發中";
         status = "started";
-      }else {
+      }else if(status === "unknown"){
         tag = startDate.format("D/M") + '派發';
-        if(data[4] !== ''){
-          var reserveDate = moment(data[4]+'+08:00', "DD/MM/YYYY HH:mmZ").tz('Asia/Hong_Kong');
-          if(reserveDate.isBefore(currentDate)){
-            tag = "預留中";
-          }
-        }
+        status = "pending";
       }
     }
+
     return (
       <SplideSlide>
         <div className={`status ${status}`}>{tag}</div>

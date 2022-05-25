@@ -20,12 +20,10 @@ const Grid = (props) => {
 }
 
 function renderMemberBlock(member){
-  const image = require('../image/profile/' + member + '_1.jpg');
+  const image = require('../image/profile/' + member + '.jpg');
   var hoverImage;
   if(member == "collar"){
-    hoverImage = require('../image/profile/collar_1.jpg');
-  } else {
-    hoverImage = require('../image/profile/' + member + '.gif');
+    //hoverImage = require('../image/profile/collar_1.jpg');
   }
   return (
     <div className="col-4">

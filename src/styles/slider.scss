@@ -1,3 +1,11 @@
+.today-reserve,.today-distribute{
+  .goods{
+    .status{
+      display: none;
+    }
+  }
+}
+
 .goods{
   .status{
     right: 0;
@@ -11,6 +19,9 @@
     }
     &.pending{
       background-color: #001d87;
+    }
+    &.unknown{
+      display : none;
     }
   }
 
